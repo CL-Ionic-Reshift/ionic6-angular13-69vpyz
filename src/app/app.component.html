@@ -1,0 +1,102 @@
+<ion-app>
+  <ion-content>
+    <hello name="{{ name }}"></hello>
+
+    <div class="scroll-container hide-scrollbar">
+      <!-- <div *ngFor="let item of scrollItems">
+        {{ item }}
+      </div> -->
+
+      <ion-segment
+        [(ngModel)]="segment"
+        *ngFor="let item of scrollItems"
+        [value]="item"
+      >
+        <ion-segment-button [value]="item">
+          <ion-label>{{ item }}</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <ion-segment [(ngModel)]="segment" value="tab1">
+      <ion-segment-button value="tab1">
+        <ion-label>tab 1</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="tab3">
+        <ion-label>Tab 3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <div [ngSwitch]="segment">
+      {{segment}}
+      <div *ngSwitchCase="'tab1'" style="color : red;">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12">
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+              </p>
+
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+              </p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div *ngSwitchCase="'tab3'">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12">
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+              </p>
+
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+              </p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </ion-content>
+</ion-app>
